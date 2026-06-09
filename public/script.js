@@ -50,7 +50,7 @@ document.getElementById("stats").innerHTML =
 `📰 Showing ${articles.length} articles`;
 
 articles.forEach((article, index) => {
-
+    console.log(article);
 const card=document.createElement("div");
 
 card.className="card";

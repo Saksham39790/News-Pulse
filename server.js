@@ -22,12 +22,14 @@ app.get("/news", async (req, res) => {
         console.log("Search:", search);
         console.log("Results:", data.totalResults);
         console.log("Articles returned:", data.articles.length);
+        console.log("First article:", data.articles[0]);
 
         const formattedArticles = data.articles.map(article => ({
             title: article.title,
             description: article.description,
             url: article.url,
             urlToImage: article.image,
+            publishedAt: article.publishedAt || article.published_at,
             source: {
                 name: article.source.name
             }
