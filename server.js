@@ -20,7 +20,7 @@ app.get("/news", async (req, res) => {
         const data = await response.json();
 
         console.log("Search:", search);
-        console.log("Results:", data.totalResults);
+        console.log("Results:", data.totalArticles);
 
         const formattedArticles = (data.articles || []).map(article => ({
             title: article.title,
