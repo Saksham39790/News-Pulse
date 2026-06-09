@@ -69,9 +69,18 @@ article.urlToImage ||
 <div class="meta">
 ${article.source.name}
 <br>
-🕒 ${new Date(
-article.publishedAt
-).toLocaleDateString()}
+🕒 ${
+  article.publishedAt &&
+  !isNaN(new Date(article.publishedAt))
+    ? new Date(article.publishedAt).toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      })
+    : "Date unavailable"
+}
 </div>
 
 <p>
