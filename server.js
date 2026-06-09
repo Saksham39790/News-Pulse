@@ -21,6 +21,7 @@ app.get("/news", async (req, res) => {
 
         console.log("Search:", search);
         console.log("Results:", data.totalResults);
+        console.log("Articles returned:", data.articles.length);
 
         const formattedArticles = data.articles.map(article => ({
             title: article.title,
