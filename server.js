@@ -18,7 +18,7 @@ app.get("/news", async (req, res) => {
         );
 
         const data = await response.json();
-
+        console.log(data);
         console.log("Search:", search);
         console.log("Results:", data.totalArticles);
 
